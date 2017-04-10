@@ -9,5 +9,5 @@ env:
 
 
 script:
-- build -t signetsim/signetsim:$image $image
+- docker build -t signetsim/signetsim:$image $image
 
