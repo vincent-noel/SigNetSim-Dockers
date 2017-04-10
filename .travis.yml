@@ -1,0 +1,13 @@
+sudo: required
+
+services: docker
+
+env:
+  - image=precise
+  - image=trusty
+  - image=xenial
+
+
+script:
+- build -t signetsim/signetsim:$image $image
+
