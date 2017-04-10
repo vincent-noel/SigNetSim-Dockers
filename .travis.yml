@@ -11,7 +11,7 @@ env:
     - image=xenial
   
 before_script:
-- docker login signetsim $PASSWORD
+- docker login -u signetsim -p $PASSWORD
  
 script:
 - docker build -t signetsim/signetsim:$image $image
