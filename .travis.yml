@@ -9,11 +9,12 @@ env:
     - image=precise
     - image=trusty
     - image=xenial
+    - image=wheezy
     - image=jessie
 
 before_script:
 - docker login -u signetsim -p $PASSWORD
- 
+
 script:
 - docker build -t signetsim/signetsim:$image $image
 
