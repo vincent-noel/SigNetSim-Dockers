@@ -11,6 +11,7 @@ env:
     - image=xenial
     - image=wheezy
     - image=jessie
+    - image=jupyter-notebook
 
 before_script:
 - docker login -u signetsim -p $PASSWORD
