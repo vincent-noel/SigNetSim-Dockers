@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM debian:jessie
 
 MAINTAINER Vincent Noel version: 0.1
 
@@ -6,7 +6,9 @@ RUN apt-get -qq update
 RUN apt-get install -y libopenmpi-dev openmpi-bin libsundials-serial-dev libsundials-serial liblapack-dev libblas-dev libatlas-dev libfreetype6-dev libpng12-dev libatlas-base-dev python-dev python-pip python-setuptools git subversion gfortran g++ gcc make pkg-config unzip wget apache2 libapache2-mod-wsgi npm nodejs-legacy graphviz
 RUN npm -g install bower
 
-RUN pip install pip --upgrade
+RUN pip install pip --ignore-installed --upgrade
+RUN rm /usr/bin/pip
+RUN ln -s /usr/local/bin/pip2 /usr/bin/pip
 RUN easy_install -U distribute
 RUN pip install matplotlib mpld3 numpy PyDSTool python-libsbml scipy sympy python-libsedml bioservices pandas lxml coveralls django==1.8.18 django-bootstrap3 Jinja2 bs4 git+https://github.com/jamesscottbrown/sbml-diff.git
 

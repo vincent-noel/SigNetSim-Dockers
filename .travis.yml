@@ -9,7 +9,8 @@ env:
     - image=precise
     - image=trusty
     - image=xenial
-  
+    - image=jessie
+
 before_script:
 - docker login -u signetsim -p $PASSWORD
  
