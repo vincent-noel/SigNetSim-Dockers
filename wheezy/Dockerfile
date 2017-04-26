@@ -6,7 +6,7 @@ RUN apt-get -qq update
 RUN apt-get install -y --force-yes libopenmpi-dev openmpi-bin libsundials-serial-dev libsundials-serial liblapack-dev libblas-dev libatlas-dev libfreetype6-dev libpng12-dev libatlas-base-dev python-dev python-pip python-setuptools git subversion gfortran g++ gcc make pkg-config unzip wget curl apache2 libapache2-mod-wsgi graphviz
 RUN echo 'deb http://http.debian.net/debian wheezy-backports main' > /etc/apt/sources.list.d/wheezy-backports.list
 RUN apt-get -qq update
-RUN apt-get -t wheezy-backports nodejs-legacy
+RUN apt-get -t wheezy-backports install -y nodejs-legacy
 RUN curl https://www.npmjs.com/install.sh | sh
 RUN npm -g install bower
 
