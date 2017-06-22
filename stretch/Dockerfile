@@ -1,15 +1,14 @@
-FROM debian:wheezy
+FROM debian:stretch
 
 MAINTAINER Vincent Noel version: 0.1
 
 RUN apt-get -qq update
-RUN apt-get install -y --force-yes libopenmpi-dev openmpi-bin libsundials-serial-dev libsundials-serial liblapack-dev libblas-dev libatlas-dev libfreetype6-dev libpng12-dev libatlas-base-dev python-dev python-pip python-setuptools git subversion gfortran g++ gcc make pkg-config unzip wget curl apache2 libapache2-mod-wsgi graphviz
-
-RUN wget https://nodejs.org/download/release/v0.12.18/node-v0.12.18.tar.gz
-RUN tar -zxvf node-v0.12.18.tar.gz; cd node-v0.12.18; ./configure; make; make install; cd ..
+RUN apt-get install -y libopenmpi-dev openmpi-bin libsundials-serial-dev libsundials-serial liblapack-dev libblas-dev libatlas-dev libfreetype6-dev libpng-dev libatlas-base-dev python-dev python-pip python-setuptools git subversion gfortran g++ gcc make pkg-config unzip wget curl apache2 libapache2-mod-wsgi gnupg graphviz
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y nodejs
 RUN npm -g install bower
 
-RUN pip install pip --upgrade
+RUN pip install pip --ignore-installed --upgrade
 RUN rm /usr/bin/pip
 RUN ln -s /usr/local/bin/pip2 /usr/bin/pip
 RUN easy_install -U distribute

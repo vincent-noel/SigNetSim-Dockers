@@ -10,7 +10,8 @@ env:
     - image=trusty
     - image=xenial
     - image=wheezy
-    - image=jessie
+    - image=jessie    
+    - image=stretch
     - image=jupyter-notebook
 
 before_script:
