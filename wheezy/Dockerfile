@@ -3,7 +3,7 @@ FROM debian:wheezy
 MAINTAINER Vincent Noel version: 0.1
 
 RUN apt-get -qq update
-RUN apt-get install -y --force-yes libopenmpi-dev openmpi-bin libsundials-serial-dev libsundials-serial liblapack-dev libblas-dev libatlas-dev libfreetype6-dev libpng12-dev libatlas-base-dev python-dev python-pip python-setuptools git subversion gfortran g++ gcc make pkg-config unzip wget curl apache2 libapache2-mod-wsgi graphviz
+RUN apt-get install -y --force-yes libopenmpi-dev openmpi-bin libsundials-serial-dev libsundials-serial liblapack-dev libblas-dev libatlas-dev libfreetype6-dev libpng12-dev libatlas-base-dev python-dev python-pip python-setuptools git subversion gfortran g++ gcc make pkg-config unzip wget curl apache2 libapache2-mod-wsgi graphviz realpath
 
 RUN wget https://nodejs.org/download/release/v0.12.18/node-v0.12.18.tar.gz
 RUN tar -zxvf node-v0.12.18.tar.gz; cd node-v0.12.18; ./configure; make; make install; cd ..
