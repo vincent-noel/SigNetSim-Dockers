@@ -7,12 +7,13 @@ RUN apt-get install -y \
     libopenmpi-dev openmpi-bin \
     libsundials-serial-dev libsundials-serial \
     liblapack-dev libblas-dev libatlas-dev libatlas-base-dev \
-    git python-pip \
+    git python-pip python-dev \
     gcc make \
     unzip wget curl realpath gnupg \
     apache2 libapache2-mod-wsgi
 
 RUN pip install pip --upgrade
+RUN ln -s /usr/local/bin/pip /usr/bin/pip
 RUN easy_install -U distribute
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
