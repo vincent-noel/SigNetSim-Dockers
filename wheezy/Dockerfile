@@ -13,7 +13,6 @@ RUN apt-get install -y \
     apache2 libapache2-mod-wsgi
 
 RUN pip install pip --upgrade
-RUN ln -s /usr/local/bin/pip /usr/bin/pip
 RUN easy_install -U distribute
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
