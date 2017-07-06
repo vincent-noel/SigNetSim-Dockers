@@ -7,8 +7,8 @@ RUN apt-get install -y \
     libopenmpi-dev openmpi-bin \
     libsundials-serial-dev libsundials-serial \
     liblapack-dev libblas-dev libatlas-dev libatlas-base-dev \
-    git python-pip \
-    gcc make \
+    git python-pip python-dev \
+    gcc g++ make \
     unzip wget curl realpath gnupg \
     apache2 libapache2-mod-wsgi
 
