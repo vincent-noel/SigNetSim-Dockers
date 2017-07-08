@@ -3,14 +3,8 @@ FROM debian:wheezy
 MAINTAINER Vincent Noel version: 0.1
 
 RUN apt-get -qq update
-RUN apt-get install -y \
-    libopenmpi-dev openmpi-bin \
-    libsundials-serial-dev libsundials-serial \
-    liblapack-dev libblas-dev libatlas-dev libatlas-base-dev \
-    git python-pip python-dev \
-    gcc g++ make \
-    unzip wget curl realpath gnupg \
-    apache2 libapache2-mod-wsgi
+RUN apt-get install -y curl
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/SigNetSim/develop/scripts/apt_requirements | xargs apt-get install -y
 
 RUN pip install pip --upgrade
 RUN easy_install -U distribute
@@ -19,7 +13,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g bower
 
-RUN pip install matplotlib mpld3 numpy PyDSTool python-libsbml scipy sympy python-libsedml bioservices pandas lxml coveralls django==1.8.18 django-bootstrap3 jinja2
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/SigNetSim/develop/scripts/pip_requirements | xargs pip install
 
 RUN wget http://downloads.sourceforge.net/project/sbml/test-suite/3.2.0/case-archives/sbml-semantic-test-cases-2016-07-27.zip -O /tmp/temp.zip
 RUN unzip -nq /tmp/temp.zip -d /tmp
