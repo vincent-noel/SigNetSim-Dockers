@@ -4,7 +4,7 @@ MAINTAINER Vincent Noel version: 0.1
 
 RUN git clone -b develop https://github.com/vincent-noel/libSigNetSim.git
 RUN apt-get install -y libopenmpi-dev openmpi-bin libsundials-serial-dev libsundials-serial liblapack-dev libblas-dev libatlas-dev libfreetype6-dev libpng12-dev libatlas-base-dev python-dev python-pip python-setuptools git subversion gfortran g++ gcc make pkg-config unzip wget
-RUN pip install -r /libSigNetSim/requirements.txt
+RUN pip install -v -r /libSigNetSim/requirements.txt
 RUN pip install /libSigNetSim
 RUN pip install jupyter
 RUN jupyter notebook --generate-config --allow-root
