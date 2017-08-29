@@ -13,8 +13,9 @@ RUN npm install -g bower
 RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/requirements.txt | xargs pip install -v
 RUN curl -sL https://raw.githubusercontent.com/vincent-noel/SigNetSim/develop/scripts/pip_requirements | xargs pip install -v
 
-RUN wget http://downloads.sourceforge.net/project/sbml/test-suite/3.2.0/case-archives/sbml-semantic-test-cases-2016-07-27.zip -O /tmp/temp.zip
-RUN unzip -nq /tmp/temp.zip -d /tmp
+RUN git clone -b develop https://github.com/vincent-noel/sbml-test-suite.git /tmp/sbml-test-suite
+RUN mv /tmp/sbml-test-suite/src/utilities/make-tag-map/make-tag-map.sh /tmp/sbml-test-suite/
+RUN cd /tmp/sbml-test-suite; ./make-tag-map.sh cases/semantic/.cases-tags-map; python src/utilities/python-sedml/write_sedml.py; cd /
 
 RUN mkdir -p /home/travis/build/vincent-noel/libSigNetSim/
 RUN mkdir -p /home/travis/build/vincent-noel/SigNetSim/
