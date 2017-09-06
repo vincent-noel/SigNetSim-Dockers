@@ -11,7 +11,7 @@ RUN apt-get install -y nodejs
 RUN npm install -g bower
 
 RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/requirements.txt | xargs pip install -v
-RUN curl -sL https://raw.githubusercontent.com/vincent-noel/SigNetSim/develop/scripts/pip_requirements | xargs pip install -v
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/SigNetSim/develop/scripts/pip_requirements | sed 's|git+https://github.com/vincent-noel/libSigNetSim.git@develop||' | xargs pip install -v
 
 RUN git clone -b develop https://github.com/vincent-noel/sbml-test-suite.git /tmp/sbml-test-suite
 RUN mv /tmp/sbml-test-suite/src/utilities/make-tag-map/make-tag-map.sh /tmp/sbml-test-suite/
