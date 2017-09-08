@@ -11,7 +11,8 @@ RUN apt-get install -y nodejs
 RUN npm install -g bower
 
 RUN curl -sL https://raw.githubusercontent.com/vincent-noel/python-libsedml/test_swig3.0/scripts/install_dep.sh | bash -
-RUN pip install git+https://github.com/vincent-noel/python-libsedml.git#egg=python-libsedml
+RUN pip install git+https://github.com/vincent-noel/python-libsedml.git@test_swig3.0#egg=python-libsedml
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/python-libnuml/test_swig3.0/scripts/install_dep.sh | bash -
 RUN pip install git+https://github.com/vincent-noel/python-libnuml.git@test_swig3.0#egg=python-libnuml
 
 RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/requirements.txt | xargs pip install -v
