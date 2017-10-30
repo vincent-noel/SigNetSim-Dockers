@@ -3,7 +3,10 @@ FROM debian:wheezy
 MAINTAINER Vincent Noel version: 0.1
 
 RUN apt-get -qq update
-RUN apt-get install -y curl
+RUN apt-get install -y curl wget python-pip
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
+RUN ln -s /usr/local/bin/pip /usr/bin/pip-2.7
 RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep.sh | bash -
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
