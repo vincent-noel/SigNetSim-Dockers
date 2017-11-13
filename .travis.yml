@@ -15,6 +15,7 @@ env:
     - image=fedora.26
     - image=notebook
     - image=signetsim
+    - image=develop
 
 before_script:
 - docker login -u signetsim -p $PASSWORD
