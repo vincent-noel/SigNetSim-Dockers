@@ -13,19 +13,11 @@ env:
     - image=jessie    
     - image=stretch
     - image=fedora.26
+    - image=signetsim
+    - image=notebook
 
 before_script:
 - docker login -u signetsim -p $PASSWORD
 
 script:
-- docker build -t signetsim/travis_testenv:$image $image
-- docker build -t signetsim/signetsim signetsim
-- docker build -t signetsim/notebook jupyter-notebook
-
-after_success:
-- docker commit signetsim/travis_testenv:$image
-- docker push signetsim/travis_testenv:$image
-- docker commit signetsim/signetsim
-- docker push signetsim/signetsim
-- docker commit signetsim/notebook
-- docker push signetsim/notebook
+- /bin/bash build_images.sh $image
