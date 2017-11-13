@@ -17,7 +17,5 @@ RUN git clone -b develop https://github.com/vincent-noel/sbml-test-suite.git /tm
 RUN mv /tmp/sbml-test-suite/src/utilities/make-tag-map/make-tag-map.sh /tmp/sbml-test-suite/
 RUN cd /tmp/sbml-test-suite; ./make-tag-map.sh cases/semantic/.cases-tags-map; python src/utilities/python-sedml/write_sedml.py; cd /
 
-RUN mkdir -p /home/travis/build/vincent-noel/libSigNetSim/
-RUN mkdir -p /home/travis/build/vincent-noel/SigNetSim/
-
+RUN git clone https://github.com/vincent-noel/SigNetSim.git
 RUN /bin/bash /SigNetSim/scripts/install.sh
