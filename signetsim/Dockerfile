@@ -19,3 +19,7 @@ RUN cd /tmp/sbml-test-suite; ./make-tag-map.sh cases/semantic/.cases-tags-map; p
 
 RUN git clone https://github.com/vincent-noel/SigNetSim.git
 RUN /bin/bash /SigNetSim/scripts/install.sh
+
+EXPOSE 80
+
+CMD /usr/sbin/apache2ctl -D FOREGROUND
