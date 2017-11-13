@@ -19,8 +19,8 @@ before_script:
 - docker login -u signetsim -p $PASSWORD
 
 script:
-- docker build -t signetsim/signetsim:$image $image
+- docker build -t signetsim/travis_testenv:$image $image
 
 after_success:
-- docker commit signetsim/signetsim:$image
-- docker push signetsim/signetsim:$image
+- docker commit signetsim/travis_testenv:$image
+- docker push signetsim/travis_testenv:$image
