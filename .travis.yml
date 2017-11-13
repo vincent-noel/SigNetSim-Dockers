@@ -13,8 +13,8 @@ env:
     - image=jessie    
     - image=stretch
     - image=fedora.26
-    - image=signetsim
     - image=notebook
+    - image=signetsim
 
 before_script:
 - docker login -u signetsim -p $PASSWORD

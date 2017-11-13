@@ -1,9 +1,14 @@
-FROM signetsim/signetsim:xenial
+FROM debian:stretch
 
 MAINTAINER Vincent Noel version: 0.1
 
-RUN git clone -b develop https://github.com/vincent-noel/libSigNetSim.git
-RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep.sh | bash -
+RUN apt-get -qq update
+RUN apt-get install -y curl
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/master/scripts/install_dep.sh | bash -
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/master/requirements.txt | xargs pip install
+
+RUN git clone https://github.com/vincent-noel/libSigNetSim.git
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/master/scripts/install_dep.sh | bash -
 RUN pip install -r /libSigNetSim/requirements.txt
 RUN pip install /libSigNetSim
 RUN pip install "jupyter<= 6"
