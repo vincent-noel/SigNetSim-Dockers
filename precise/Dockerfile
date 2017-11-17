@@ -3,7 +3,7 @@ FROM ubuntu:precise
 MAINTAINER Vincent Noel version: 0.1
 
 RUN apt-get -qq update
-RUN apt-get install -y curl wget python-pip
+RUN apt-get install -y curl git wget python-pip
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 RUN ln -s /usr/local/bin/pip /usr/bin

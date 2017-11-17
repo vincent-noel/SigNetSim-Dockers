@@ -3,7 +3,7 @@ FROM ubuntu:trusty
 MAINTAINER Vincent Noel version: 0.1
 
 RUN apt-get -qq update
-RUN apt-get install -y curl
+RUN apt-get install -y curl git
 RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/test_submodules/scripts/install_dep.sh | bash -
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
