@@ -3,7 +3,7 @@ FROM fedora:26
 MAINTAINER Vincent Noel version: 0.1
 
 RUN dnf -y update
-RUN dnf -y install findutils
+RUN dnf -y install findutils git
 RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep_fedora.sh | bash -
 
 RUN dnf -y install nodejs
