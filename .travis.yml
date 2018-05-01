@@ -15,6 +15,7 @@ env:
     - image=fedora.26
     - image=stretch-python3
     - image=xenial-python3
+    - image=develop-python3
 
 
 before_script:
