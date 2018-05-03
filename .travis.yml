@@ -15,7 +15,8 @@ env:
     - image=fedora.26
     - image=stretch-python3
     - image=xenial-python3
-
+    - image=jessie-python3
+    - image=trusty-python3
 
 before_script:
 - docker login -u signetsim -p $PASSWORD
