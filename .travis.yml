@@ -17,9 +17,11 @@ env:
     - image=xenial-python3
     - image=jessie-python3
     - image=trusty-python3
+    - image=manylinux1_x86_64
 
 before_script:
 - docker login -u signetsim -p $PASSWORD
 
 script:
-- /bin/bash build_images.sh $image
+- docker build -t signetsim/travis_testenv:$image $image || exit 1;
+- docker push signetsim/travis_testenv:$image || exit 1;
