@@ -12,12 +12,13 @@ env:
     - image=wheezy
     - image=jessie    
     - image=stretch
-    - image=fedora.26
     - image=stretch-python3
     - image=xenial-python3
     - image=jessie-python3
     - image=trusty-python3
-    - image=manylinux1_x86_64
+    - image=fedora.26
+    - image=fedora.27
+    - image=fedora.28
 
 before_script:
 - docker login -u signetsim -p $PASSWORD

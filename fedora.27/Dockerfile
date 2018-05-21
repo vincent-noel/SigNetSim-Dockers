@@ -1,4 +1,4 @@
-FROM fedora:26
+FROM fedora:27
 
 MAINTAINER Vincent Noel version: 0.1
 
