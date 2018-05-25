@@ -2,6 +2,7 @@ FROM centos:7
 
 MAINTAINER Vincent Noel version: 0.1
 
+RUN yum -y install epel-release
 RUN yum -y makecache
 RUN yum -y install git python-pip
 
