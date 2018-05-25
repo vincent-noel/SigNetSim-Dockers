@@ -19,7 +19,9 @@ env:
     - image=fedora.26
     - image=fedora.27
     - image=fedora.28
-
+    - image=opensuse.15
+    - image=centos.7
+    
 before_script:
 - docker login -u signetsim -p $PASSWORD
 
