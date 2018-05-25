@@ -9,9 +9,11 @@ env:
     - image=precise
     - image=trusty
     - image=xenial
+    - image=bionic
     - image=wheezy
     - image=jessie    
     - image=stretch
+    - image=bionic-python3
     - image=stretch-python3
     - image=xenial-python3
     - image=jessie-python3
