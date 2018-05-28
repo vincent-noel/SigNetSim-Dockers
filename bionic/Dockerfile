@@ -4,7 +4,7 @@ MAINTAINER Vincent Noel version: 0.1
 
 RUN apt-get -qq update
 RUN apt-get install -y curl git
-RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep.sh | bash -
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep-debian.sh | bash -s 2
 
 RUN pip install python-libsbml python-libsedml
 RUN git clone -b develop https://github.com/vincent-noel/sbml-test-suite.git /tmp/sbml-test-suite

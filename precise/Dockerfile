@@ -7,7 +7,7 @@ RUN apt-get install -y curl git wget python-pip
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 RUN ln -s /usr/local/bin/pip /usr/bin
-RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep.sh | bash -
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep-debian.sh | bash -s 2
 
 RUN pip install python-libsbml python-libsedml
 RUN git clone -b develop https://github.com/vincent-noel/sbml-test-suite.git /tmp/sbml-test-suite
