@@ -6,9 +6,6 @@ RUN dnf -y update
 RUN dnf -y install findutils git
 RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep_fedora.sh | bash -
 
-RUN dnf -y install nodejs
-RUN npm install -g yarn
-
 RUN pip install python-libsbml python-libsedml
 RUN git clone -b develop https://github.com/vincent-noel/sbml-test-suite.git /tmp/sbml-test-suite
 RUN mv /tmp/sbml-test-suite/dev/utilities/make-tag-map/make-tag-map.sh /tmp/sbml-test-suite/
