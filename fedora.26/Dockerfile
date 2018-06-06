@@ -4,7 +4,7 @@ MAINTAINER Vincent Noel version: 0.1
 
 RUN dnf -y update
 RUN dnf -y install findutils git
-RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep_fedora.sh | bash -
+RUN curl -sL https://raw.githubusercontent.com/vincent-noel/libSigNetSim/develop/scripts/install_dep-fedora.sh | bash -
 
 RUN pip install python-libsbml python-libsedml
 RUN git clone -b develop https://github.com/vincent-noel/sbml-test-suite.git /tmp/sbml-test-suite
